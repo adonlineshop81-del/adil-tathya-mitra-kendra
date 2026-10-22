@@ -227,7 +227,7 @@ p {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 1.1fr 1fr;
   gap: 2rem;
   align-items: center;
 }
@@ -266,53 +266,144 @@ p {
   color: var(--secondary);
 }
 
-.hero-card {
-  background: linear-gradient(150deg, var(--primary-dark), var(--primary));
-  border-radius: 28px;
-  color: var(--white);
-  padding: 2rem;
-  box-shadow: var(--shadow);
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.card-badge {
-  display: inline-flex;
-  padding: 0.5rem 0.9rem;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+.logo-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-circle {
+  position: relative;
+  width: min(620px, 90vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #f4f4f4;
+  border: 16px solid #0ea5ff;
+  box-shadow: inset 0 0 0 10px rgba(14, 165, 255, 0.15), 0 28px 60px rgba(13, 92, 123, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.logo-swoosh {
+  position: absolute;
+  width: 78%;
+  height: 62%;
+  top: 7%;
+  left: 11%;
+  border-radius: 50%;
+  border: 12px solid #0d5c7b;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  transform: rotate(-26deg);
+  box-sizing: border-box;
+}
+
+.logo-swoosh::before {
+  content: "";
+  position: absolute;
+  inset: 16% 10% 16% 10%;
+  border-radius: 50%;
+  border: 14px solid #0ea5ff;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  transform: rotate(10deg);
+}
+
+.logo-monogram {
+  position: relative;
+  margin-top: -1rem;
+  font-size: clamp(7rem, 15vw, 15rem);
+  font-weight: 900;
+  letter-spacing: -0.11em;
+  line-height: 0.8;
+  color: #0b0b0b;
+  transform: translateY(-0.4rem);
+  text-shadow: 0 8px 0 rgba(0, 0, 0, 0.08);
+}
+
+.logo-name {
+  position: relative;
+  font-size: clamp(2.8rem, 5vw, 6rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
   text-transform: uppercase;
+  color: #0b6ab0;
+  margin-top: -0.2rem;
 }
 
-.hero-card h2 {
-  margin: 1.3rem 0 2rem;
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-}
-
-.mini-stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.mini-stats div {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 1rem;
+.logo-subname {
+  position: relative;
+  margin-top: 0.3rem;
+  font-size: clamp(1.3rem, 2.8vw, 3rem);
+  font-weight: 800;
+  color: #0b6ab0;
+  line-height: 1;
+  padding: 0.4rem 1.2rem;
   border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(90deg, rgba(13, 92, 123, 0.98), rgba(13, 92, 123, 0.88));
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(13, 92, 123, 0.18);
 }
 
-.mini-stats strong {
-  display: block;
-  font-size: 1.8rem;
-  margin-bottom: 0.25rem;
+.logo-tagline {
+  position: relative;
+  margin-top: 1rem;
+  font-size: clamp(1rem, 2vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-style: italic;
+  color: #0a3d62;
+  text-transform: none;
 }
 
-.mini-stats span {
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.8);
+.service-strip {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin-top: 1rem;
+  padding: 0 1.5rem;
+  width: 100%;
+  justify-items: center;
+}
+
+.mini-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.icon-blue { background: #16a3ff; }
+.icon-orange { background: #f39c12; }
+.icon-purple { background: #7c4dff; }
+.icon-green { background: #2ecc71; }
+.icon-red { background: #ff5f6d; }
+.icon-gold { background: #ffc107; }
+
+.wave-band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -18px;
+  height: 90px;
+  background: linear-gradient(180deg, rgba(11, 106, 176, 0.18), rgba(11, 106, 176, 0) 30%);
+  border-top: 10px solid rgba(15, 123, 205, 0.82);
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
 }
 
 .stats-bar {
